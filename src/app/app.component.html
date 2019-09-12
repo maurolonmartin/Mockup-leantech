@@ -1,21 +1,50 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div>
+  <header>
+    <nav>
+        <a [routerLink]="['/home']" [routerLinkActive]="['actived']">
+            <span class="fas fa-home" id="icono"></span><br>
+            <span class="link">Home</span>
+        </a>
+        <a [routerLink]="['/messages']" [routerLinkActive]="['actived']">
+            <span class="fas fa-envelope" id="icono"></span><br>
+            <span class="link">Messages</span>
+        </a>
+        <a [routerLink]="['/wishlist']" [routerLinkActive]="['actived']">
+            <span class="fas fa-star" id="icono"></span><br>
+            <span class="link">Wishlist</span>
+        </a>
+        <a [routerLink]="['/settings']" [routerLinkActive]="['actived']">
+            <span class="fas fa-cog"></span><br>
+            <span class="link">Settings</span>
+        </a>
+        <a [routerLink]="['/account']" [routerLinkActive]="['actived']">
+          <span class="fas fa-user"></span><br>
+          <span class="link">Account</span>
+      </a>
+    </nav>
+  </header>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div>
+  <img class="logo" src="../assets/images/logo.png" alt="">
+</div>
+<section id="content">
+  <div>
+    <div class="filter">
+      <h4>Smart Filters</h4><hr>
+      <img src="../assets/images/sale.png" class="icon"><mat-slide-toggle class="toggleBtn"></mat-slide-toggle><br>
+      <img src="../assets/images/calendar.png" class="icon"><mat-slide-toggle class="toggleBtn"></mat-slide-toggle><br>
+      <img src="../assets/images/heart.png" class="icon"><mat-slide-toggle class="toggleBtn"></mat-slide-toggle><br>
+    </div>
+    <div class="filter">
+      <hr>
+      <h4>Status</h4>
+      <input type="search" name="" id="search" placeholder="Search"><br>
+      <input type="button" value="DELIVERED" id="delivered">
+    </div>
+  </div>
+  <div class="appRouter">
+    <router-outlet></router-outlet>
+  </div>
+</section>
 
-<router-outlet></router-outlet>
+
