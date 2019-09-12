@@ -1,1 +1,35 @@
-<p>messages works!</p>
+<h2>Contact Form</h2>
+<div class="form">
+    <form #formContact="ngForm" (ngSubmit)="onSubmit()">
+        <label for="firstname" class="label-name">
+            <span class="content-name">First Name</span> 
+        </label><br>
+        <input type="text" name="firstname" #name="ngModel" [(ngModel)]="message.firstname" required/><br>
+        
+    
+        <label for="surname" class="label-name">
+            <span class="content-name">Surame</span> 
+        </label><br/>
+        <input type="text" name="surname" #surname="ngModel" [(ngModel)]="message.surname" required/><br/>
+        
+
+        <label for="email" class="label-name">Contact Email</label><br/>
+        <input type="text" name="firstname" #email="ngModel" [(ngModel)]="message.email" required/><br/>
+
+        <label for="phone" class="label-name">Phone Number</label><br/>
+        <input type="text" name="phone" #phone="ngModel" [(ngModel)]="message.phone" required/><br/>
+
+        <label for="message" class="label-name">Message</label><br/>
+        <textarea name="message" #messagetex="ngModel" [(ngModel)]="message.messagetext" required></textarea><br/>
+
+        <input type="submit" value="Send">
+    </form>
+</div>
+
+<!--<div class="form">
+    <input type="text" name="firstname" autocomplete="off" #name="ngModel" [(ngModel)]="message.firstname" required/>
+    <label for="name" class="label-name">
+        <span class="content-name">Name</span>
+    </label>
+    <input type="submit" value="Send">
+</div>-->

@@ -3,18 +3,18 @@ body {
   min-height: 90vh;
   min-width: 90vw;
   box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  width: 100%;
-  font-family: 'Roboto', sans-serif, "Segoe UI",
+  font-family: 'roboto', sans-serif, "Segoe UI",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   color: rgb(87, 87, 87);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: rgb(238, 238, 238);
+}
+
+body {
+  margin: 0;
+  width: 100%;
 }
 
 .root {
@@ -42,6 +42,7 @@ header nav{
 header nav a{
   background: white;
   display: inline-block;
+  padding-top: 10px;
   padding-right: 0px;
   padding-left: 20px;
   text-decoration: none;
@@ -49,7 +50,7 @@ header nav a{
   transition: 0.2s ease-in;
   font-size: 20px;
   text-align: center;
-  width: 200px;
+  width: 250px;
 }
 
 header nav a::before{
@@ -88,38 +89,33 @@ header nav a:hover,
 
 #content{
   width: 97%;
+  height: 600px;
   margin: 0 auto;
   box-shadow: 0px 0px 40px black;
   background: rgb(230, 230, 230);
   padding-top: 120px;
   margin-left: 15px;
+  position: absolute;
 }
 
-.filter{
+div .filter{
   width: 130px;
   padding-top: 30px;
   padding-left: 70px;
-  justify-content: space-between;
+  float: left;
+}
+
+h4{
+  text-align: center;
 }
 
 .icon{
   width: 50px;
   height: 50px;
-  padding-bottom: 20px;
-}
-
-.toggleBtn{
-  padding-left: 40px;
-  position: center;
-}
-
-.icon .toggleBtn{
-  display: flex;
-  align-items: center;
 }
 
 #search{
-  width: 110px;
+  width: 135px;
   height:30px;
   margin-bottom: 10px;
   text-align: center;
@@ -129,7 +125,7 @@ header nav a:hover,
 }
 
 #delivered{
-  width: 110px;
+  width: 135px;
   height:30px;
   margin-bottom: 10px;
   text-align: center;
@@ -137,6 +133,51 @@ header nav a:hover,
   background: white;  
 }
 
-.appRouter{
-  padding-left: 200px;
+.controles{
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  justify-content: space-between;
 }
+
+.status{
+  width: 130px;
+  padding-top: 5px;
+  padding-left: 70px;
+}
+
+.appRouter{
+  padding-left: 250px;
+  top: -500px;
+  position: relative;
+}
+
+.borderlist {
+  list-style-position:inside;
+  border: 1px;
+  border-radius: 30px;
+  padding: 30px 0px 30px 20px;
+  margin: 30px;
+  width: 770px;
+  list-style: none;
+  background: white;
+  color: darkgrey;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.value{
+  font-size: 50px;
+}
+
+.form input, textarea{
+  border-radius: 15px;
+  border: none;
+  width: 50%;
+  margin-bottom: 20px;
+  height: 30px;
+  padding-left: 10px;
+}
+
+
+

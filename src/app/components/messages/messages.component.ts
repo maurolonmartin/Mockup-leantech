@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserMessages } from '../models/usermessages';
 
 @Component({
   selector: 'app-messages',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessagesComponent implements OnInit {
 
-  constructor() { }
+  public message: UserMessages;
+  constructor() { 
+    this.message = new UserMessages('','','','','');
+  }
 
   ngOnInit() {
+  }
+
+  onSubmit(){
+    console.log(this.message);
   }
 
 }

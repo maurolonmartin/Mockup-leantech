@@ -1,1 +1,8 @@
-<p>home works!</p>
+<ul>
+    <div class="guides">
+        <li class="borderlist" *ngFor="let guide of guides">
+            {{guide.date}} - {{guide.origin}} - {{guide.destination}} -  <i class="fas fa-truck"></i> - 
+            <span class="value">{{guide.value}}</span> 
+        </li>
+    </div>
+</ul>
