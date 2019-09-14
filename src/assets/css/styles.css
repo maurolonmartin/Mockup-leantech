@@ -1,3 +1,5 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 html,
 body {
   min-height: 90vh;
@@ -156,7 +158,7 @@ h4{
   list-style-position:inside;
   border: 1px;
   border-radius: 30px;
-  padding: 30px 0px 30px 20px;
+  padding: 20px 0px 30px 20px;
   margin: 30px;
   width: 770px;
   list-style: none;
@@ -179,5 +181,86 @@ h4{
   padding-left: 10px;
 }
 
+.form label{
+  padding-left: 10px;
+}
 
+.addNew {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: -45px;
+  left: 1060px;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  
+  color: white;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
 
+.addRoute:hover {
+  height: 80px;
+  width: 80px;
+  box-shadow: 0 2px 5px 0px gray
+}
+
+.redirigir{
+  align-items: center;
+  border-radius: 100px;
+  height: 70px;
+  width: 70px;
+  background: orange;
+  font-size: 4rem;
+  font-display: center;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+}
+
+.redirigir:hover {
+  border:none;  
+  box-shadow: none;
+}
+
+div.container{
+  margin: 0px 40px;
+}
+
+.fill-remaining-space{
+  flex: 1 1 auto;
+}
+
+form.normal-form{
+  margin: 10px;
+}
+.controles-container{
+  width: 100%;
+  padding: 5%;
+}
+
+.controles-container > * {
+  width: 100%;
+}
+
+.button-row button{
+  width: 135px;
+  height:30px;
+  text-align: center;
+  border: none;
+  background: white;  
+  margin: 5px;
+}
+
+snack-bar-container.success{
+  background-color: aqua;
+  color: white;
+}
+
+snack-bar-container.notification simple-snack-bar{
+  font-size: 18px !important;
+  font-weight: bold;
+}

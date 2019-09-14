@@ -2,7 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { routing, appRoutingProviders } from './app.routing';
 import { MatButtonToggleModule, MatSlideToggleModule } from '@angular/material';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from './material/material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSelectModule } from '@angular/material/select';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,7 +16,13 @@ import { MessagesComponent } from './components/messages/messages.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { AccountComponent } from './components/account/account.component';
 import { CreateComponent } from './components/create/create.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ShippingsComponent } from './components/shippings/shippings.component';
+import { ShippingComponent } from './components/shippings/shipping/shipping.component';
+import { ShippingService } from './shared/shipping.service';
+import { environment } from '../environments/environment';
+import { StatusesService } from './shared/statuses.service';
+
+
 
 @NgModule({
   declarations: [
@@ -20,7 +31,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MessagesComponent,
     SettingsComponent,
     AccountComponent,
-    CreateComponent
+    CreateComponent,
+    ShippingsComponent,
+    ShippingComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -28,10 +42,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     routing,
     MatSlideToggleModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    AngularFireDatabaseModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [
-    appRoutingProviders
+    appRoutingProviders,
+    ShippingService,
+    StatusesService
   ],
   bootstrap: [AppComponent]
 })

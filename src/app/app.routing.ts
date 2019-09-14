@@ -6,6 +6,8 @@ import { MessagesComponent } from './components/messages/messages.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { AccountComponent } from './components/account/account.component';
 import { CreateComponent } from './components/create/create.component';
+import { ShippingsComponent } from './components/shippings/shippings.component';
+
 
 const appRoutes: Routes = [
     {path: 'home', component: HomeComponent},
@@ -13,6 +15,7 @@ const appRoutes: Routes = [
     {path: 'settings', component: SettingsComponent},
     {path: 'account', component: AccountComponent},
     {path: 'create', component: CreateComponent},
+    {path: 'shippings', component: ShippingsComponent},
     {path: '**', component: HomeComponent}
 ];
 

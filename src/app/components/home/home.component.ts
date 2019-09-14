@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Guides } from '../models/guides';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,12 +10,14 @@ import { Guides } from '../models/guides';
 export class HomeComponent implements OnInit {
 
   public guides: Array<Guides>;
+  private _router: Router;
 
   constructor() {
+    
     this.guides = [
-      new Guides("Monday 10th 2:28 PM","New York","Chicago","any",250),
-      new Guides("Monday 10th 2:28 PM","Miami","Boston","any",350),
-      new Guides("Monday 10th 2:28 PM","Denver","Cincinnati","any",450)
+      new Guides("Monday 10th 2:28 PM","Houston, TX","33619","Atlanta, GA","30123",250, "123456", "Delivered"),
+      new Guides("Monday 10th 2:28 PM","Houston, TX","33619","Atlanta, GA","30123",350, "654789", "In Transit"),
+      new Guides("Monday 10th 2:28 PM","Houston, TX","33619","Atlanta, GA","30123",450, "987456", "Delivered")
     ];
   }
 
@@ -22,4 +25,8 @@ export class HomeComponent implements OnInit {
     console.log(this.guides);
   }
 
+  redirigir() {
+    console.log("evento redirigir lanzado ");
+    this._router.navigate(['/create']);
+  };
 }

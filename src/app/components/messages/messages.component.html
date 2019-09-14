@@ -2,13 +2,13 @@
 <div class="form">
     <form #formContact="ngForm" (ngSubmit)="onSubmit()">
         <label for="firstname" class="label-name">
-            <span class="content-name">First Name</span> 
+            <span class="content-name">Name</span> 
         </label><br>
         <input type="text" name="firstname" #name="ngModel" [(ngModel)]="message.firstname" required/><br>
         
     
         <label for="surname" class="label-name">
-            <span class="content-name">Surame</span> 
+            <span class="content-name">Surname</span> 
         </label><br/>
         <input type="text" name="surname" #surname="ngModel" [(ngModel)]="message.surname" required/><br/>
         
@@ -25,11 +25,3 @@
         <input type="submit" value="Send">
     </form>
 </div>
-
-<!--<div class="form">
-    <input type="text" name="firstname" autocomplete="off" #name="ngModel" [(ngModel)]="message.firstname" required/>
-    <label for="name" class="label-name">
-        <span class="content-name">Name</span>
-    </label>
-    <input type="submit" value="Send">
-</div>-->

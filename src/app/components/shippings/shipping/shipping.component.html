@@ -1,0 +1,51 @@
+<form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">
+    <mat-grid-list cols="2" rowHeight="300px">
+        <mat-grid-tile>
+            <div class="controles-container">
+                <input type="hidden" formControlName="$key">
+                <mat-form-field>
+                    <input formControlName="origin" matInput placeholder="City of Origin*">
+                    <mat-error>This field is mandatory</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="zipOrigin" matInput placeholder="Zip Code City Origin">
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="destination" matInput placeholder="City of Destination*">
+                    <mat-error>This field is mandatory</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                        <input formControlName="zipDestination" matInput placeholder="Zip Code City Destination">
+                </mat-form-field>
+                
+                
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="controles-container">
+                <mat-form-field>
+                        <input formControlName="value" matInput placeholder="Value">
+                        <mat-error *ngIf="service.form.controls['value'].errors?.required">This field is mandatory</mat-error>
+                        <mat-error *ngIf="service.form.controls['value'].errors?.minLength">Value can not be less than 9 dolars</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-select formControlName="status" placeholder="Status*">
+                        <mat-option>None</mat-option>
+                        <ng-container *ngFor="let status of statusesService.array">
+                            <mat-option value="{{status.$key}}">{{status.code}}-{{status.name}}</mat-option>
+                        </ng-container>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <input formControlName="date" matInput [matDatepicker]="picker" placeholder="Date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <div class="button-row">
+                    <button mat-raised-button type="submit" [disabled]="service.form.invalid">SUBMIT</button>
+                    <button mat-raised-button color="warn" (click)="onClear()">CLEAR</button>
+                </div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</form>
