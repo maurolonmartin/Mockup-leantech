@@ -7,6 +7,7 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { AccountComponent } from './components/account/account.component';
 import { CreateComponent } from './components/create/create.component';
 import { ShippingsComponent } from './components/shippings/shippings.component';
+import { ShippingListComponent } from './components/shippings/shipping-list/shipping-list.component';
 
 
 const appRoutes: Routes = [
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
     {path: 'account', component: AccountComponent},
     {path: 'create', component: CreateComponent},
     {path: 'shippings', component: ShippingsComponent},
+    {path: 'shipping-list', component: ShippingListComponent},
     {path: '**', component: HomeComponent}
 ];
 

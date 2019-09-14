@@ -1,0 +1,16 @@
+<div class="mat-elevation-z8">
+    <mat-table [dataSource]="listData" class="datatable">
+        
+        <ng-container matColumnDef="origin">
+            
+            <mat-header-cell *matHeaderCellDef class="dataTableCell">Origin</mat-header-cell>
+            <mat-cell *matCellDef="let element">{{element.origin}}, {{element.zipOrigin}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="value">
+                <mat-header-cell *matHeaderCellDef class="dataTableCell">Value</mat-header-cell>
+                <mat-cell *matCellDef="let element"><i class="fas fa-truck"></i>   {{element.value}}<button class="btnErase"><i class="fas fa-ellipsis-v"></i></button></mat-cell>
+            </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns" class="dataTableHeader"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;" class="dataTableCell"></mat-row>
+    </mat-table>
+</div>

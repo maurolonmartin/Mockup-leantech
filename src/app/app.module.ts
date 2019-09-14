@@ -21,6 +21,7 @@ import { ShippingComponent } from './components/shippings/shipping/shipping.comp
 import { ShippingService } from './shared/shipping.service';
 import { environment } from '../environments/environment';
 import { StatusesService } from './shared/statuses.service';
+import { ShippingListComponent } from './components/shippings/shipping-list/shipping-list.component';
 
 
 
@@ -34,6 +35,7 @@ import { StatusesService } from './shared/statuses.service';
     CreateComponent,
     ShippingsComponent,
     ShippingComponent,
+    ShippingListComponent,
   
   ],
   imports: [

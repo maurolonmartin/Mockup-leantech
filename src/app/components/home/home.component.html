@@ -1,12 +1,4 @@
-<ul>
-    <div class="guides">
-        <li class="borderlist" *ngFor="let guide of guides">
-            {{guide.date}} - {{guide.origin}} - {{guide.zipCodeOrigin}}- {{guide.destination}} - {{guide.zipCodeDestination}} -  <i class="fas fa-truck"></i> - 
-            <span class="value">{{guide.value}}</span> 
-        </li>
-    </div>
-</ul>
+<app-shipping-list></app-shipping-list>
 <div class="addNew">
     <button class="redirigir" (click)="redirigir()">+</button>
 </div>
-
