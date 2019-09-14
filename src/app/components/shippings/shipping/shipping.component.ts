@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material';
 import { ShippingService } from '../../../shared/shipping.service';
 import { StatusesService } from '../../../shared/statuses.service';
 import { NotificationService } from '../../../shared/notification.service';
@@ -12,7 +13,8 @@ export class ShippingComponent implements OnInit {
 
   constructor(private service: ShippingService,
     private statusesService: StatusesService,
-    private notificationService: NotificationService) { }
+    private notificationService: NotificationService,
+    public dialogRef: MatDialogRef<ShippingComponent>) { }
 
   ngOnInit() {
     this.service.getShippings();
@@ -29,6 +31,13 @@ export class ShippingComponent implements OnInit {
       this.service.form.reset();
       this.service.initializeFormGroup();
       this.notificationService.success(':: Submitted succesfully');
+      this.onClose();
     }
+  }
+
+  onClose(){
+    this.service.form.reset();
+    this.service.initializeFormGroup();
+    this.dialogRef.close();
   }
 }

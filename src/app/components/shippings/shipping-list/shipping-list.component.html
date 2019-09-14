@@ -1,16 +1,48 @@
+<div class="search-div">
+    <mat-form-field class="search-form-field" floatLabel="never">
+        <input matInput [(ngModel)]="searchKey" class="material-icons" placeholder="Search" autocomplete="off" (keyup)=applyFilter()>
+        <button mat-button matSuffix mat-icon-button arial-label="clear" *ngIf="searchKey" (click)="onSearchClear()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</div>
 <div class="mat-elevation-z8">
     <mat-table [dataSource]="listData" class="datatable">
-        
-        <ng-container matColumnDef="origin">
-            
-            <mat-header-cell *matHeaderCellDef class="dataTableCell">Origin</mat-header-cell>
-            <mat-cell *matCellDef="let element">{{element.origin}}, {{element.zipOrigin}}</mat-cell>
+        <ng-container matColumnDef="$key">
+            <mat-cell>Monday<br>10 2:28<br>PM</mat-cell>
         </ng-container>
-        <ng-container matColumnDef="value">
-                <mat-header-cell *matHeaderCellDef class="dataTableCell">Value</mat-header-cell>
-                <mat-cell *matCellDef="let element"><i class="fas fa-truck"></i>   {{element.value}}<button class="btnErase"><i class="fas fa-ellipsis-v"></i></button></mat-cell>
+        <ng-container matColumnDef="origin">
+            <mat-cell *matCellDef="let element">{{element.origin}},{{element.zipOrigin}} <br><i class="fas fa-sort-down"></i>
+                <br> {{element.destination}},{{element.zipDestination}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="iconTruck">
+            <mat-cell *matCellDef="let row">
+                <mat-cell ><i class="fas fa-truck"></i></mat-cell>
+            </mat-cell>
             </ng-container>
-        <mat-header-row *matHeaderRowDef="displayedColumns" class="dataTableHeader"></mat-header-row>
+        <ng-container matColumnDef="value">
+            <mat-cell *matCellDef="let element">${{element.value}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+            <mat-cell *matCellDef="let row">
+                <button mat-icon-button class="btnErase"><i class="fas fa-ellipsis-v" (click)="deleteShipping()"></i></button>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="loading">
+            <mat-footer-cell *matFooterCellDef colspan="6">
+                Loading data...
+            </mat-footer-cell>
+        </ng-container>
+        <ng-container matColumnDef="noData">
+                <mat-footer-cell *matFooterCellDef colspan="6">
+                    No data.
+                </mat-footer-cell>
+            </ng-container>
         <mat-row *matRowDef="let row; columns: displayedColumns;" class="dataTableCell"></mat-row>
+        <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listData!=null}"></mat-footer-row>
+        <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listData!=null && listData.data.length==0)}"></mat-footer-row>
     </mat-table>
+    <button mat-fab-button class="addNew" (click)="onCreate()">
+        <mat-icon>add</mat-icon>
+    </button>
 </div>

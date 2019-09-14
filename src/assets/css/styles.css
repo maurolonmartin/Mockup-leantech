@@ -185,40 +185,10 @@ h4{
   padding-left: 10px;
 }
 
-.addNew {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  bottom: -45px;
-  left: 1060px;
-  height: 80px;
-  width: 80px;
-  border-radius: 50%;
-  
-  color: white;
-  transition: 0.3s ease;
-  cursor: pointer;
-}
-
 .addRoute:hover {
   height: 80px;
   width: 80px;
   box-shadow: 0 2px 5px 0px gray
-}
-
-.redirigir{
-  align-items: center;
-  border-radius: 100px;
-  height: 70px;
-  width: 70px;
-  background: orange;
-  font-size: 4rem;
-  font-display: center;
-  color: white;
-  text-align: center;
-  cursor: pointer;
-  border: none;
 }
 
 .redirigir:hover {
@@ -285,6 +255,7 @@ div.mat-elevation-z8{
   border-radius: 20px;
   background: white;  
   color: grey;
+  padding: 2%;
 }
 
 .fa-truck{
@@ -301,5 +272,76 @@ div.mat-elevation-z8{
 button.btnErase {
   border: none;
   background: white;
-  padding: 10%;
-  }
+}
+
+.hide{
+  display:none;
+}
+
+mat-footer-row mat-footer-cell{
+  font-style: italic
+}
+
+.search-div{
+  margin:10px;
+}
+
+.search-form-field{
+  width: 60%;
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+
+.search-form-field div.mat-form-field-underline{
+  display: none;
+}
+
+.search-form-field div.mat-form-field-infix{
+  border-top: 0px;
+}
+
+.search-form-field div.mat-form-field-wrapper{
+  padding-bottom: 0px;
+}
+
+.search-form-field div.mat-form-field-suffix button{
+  height: 32px;
+  width: 32px;  
+}
+
+.addNew{
+  border-radius: 100px;
+  height: 70px;
+  width: 70px;
+  background: orange;
+  font-size: 3rem;
+  font-display: center;
+  color: white;
+  cursor: pointer;
+  border: none;
+  transform: translate(750px);
+}
+.addNew .material-icons{
+  font-size: 4rem;
+  transform: translate(-20px);
+}
+
+.material-icons button.btn-dialog-close{
+  font-size: 2rem;
+  transform: translate(-20px);
+}
+
+button.btn-dialog-close{
+  width: 45px;;
+  min-width: 0px !important;
+  height: 40px;
+  padding: 0px !important;
+  font-size: 10px;
+}
+
+.fa-sort-down{
+  color: orange;
+}

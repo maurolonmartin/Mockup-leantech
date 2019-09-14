@@ -56,6 +56,7 @@ import { ShippingListComponent } from './components/shippings/shipping-list/ship
     ShippingService,
     StatusesService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ShippingComponent]
 })
 export class AppModule { }

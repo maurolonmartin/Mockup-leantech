@@ -13,12 +13,7 @@ export class HomeComponent implements OnInit {
   private _router: Router;
 
   constructor() {
-    
-    this.guides = [
-      new Guides("Monday 10th 2:28 PM","Houston, TX","33619","Atlanta, GA","30123",250, "123456", "Delivered"),
-      new Guides("Monday 10th 2:28 PM","Houston, TX","33619","Atlanta, GA","30123",350, "654789", "In Transit"),
-      new Guides("Monday 10th 2:28 PM","Houston, TX","33619","Atlanta, GA","30123",450, "987456", "Delivered")
-    ];
+  
   }
 
   ngOnInit() {
