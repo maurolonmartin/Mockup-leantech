@@ -1,27 +1,41 @@
-# MockupLeantech
+# MockUp challenge for Lean Tech
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.1.
+This project was created with Angular 
+Coded by Mauricio Londoño
 
-## Development server
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Clone this repository to your local host
 
-## Code scaffolding
+```bash
+git clone https://github.com/maurolonmartin/Mockup-leantech.git
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+cd into the directory just created and install npm dependencies
 
-## Build
+```bash
+cd leanit
+npm install
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Run app
 
-## Running unit tests
+In the project directory run the app in the live server running:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+ng serve --o
+```
 
-## Running end-to-end tests
+If the browser does not open automatically, please open manually at this URL [http://localhost:4200](http://localhost:3000).
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Features Achieved
 
-## Further help
+- Add button or new Shippings that will be save into a firebase DB
+- Easy delete of shipping labels .  
+- Display shippings accordingly with the Mockup image.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+lob/master/README.md).
