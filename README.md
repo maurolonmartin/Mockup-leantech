@@ -1,4 +1,4 @@
-# MockUp challenge for Lean Tech
+# MockUp for Lean Tech
 
 This project was created with Angular 
 Coded by Mauricio Londoño
