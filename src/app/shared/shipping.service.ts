@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { DatePipe } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShippingService {
 
-  constructor(private firebase: AngularFireDatabase) { }
+  constructor(private firebase: AngularFireDatabase, 
+              private datePipe: DatePipe) { }
 
   shippingList: AngularFireList<any>;
 
@@ -42,7 +44,7 @@ export class ShippingService {
 
   insertShipping(shipping){
     this.shippingList.push({
-      date: shipping.date,
+      date: shipping.date == "" ? "" : this.datePipe.transform(shipping.date, 'EEEE dd h:MM a'),
       origin: shipping.origin,
       zipOrigin: shipping.zipOrigin,
       destination: shipping.destination,
@@ -55,7 +57,7 @@ export class ShippingService {
   updateShipping(shipping){
     this.shippingList.update(shipping.$key,
       {
-        date: shipping.date,
+        date: shipping.date == "" ? "" : this.datePipe.transform(shipping.date, 'EEEE dd h:MM a'),
         origin: shipping.origin,
         zipOrigin: shipping.zipOrigin,
         destination: shipping.destination,

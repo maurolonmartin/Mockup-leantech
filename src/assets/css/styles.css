@@ -1,17 +1,19 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
+  
 html,
 body {
-  min-height: 90vh;
-  min-width: 90vw;
+  min-height: 100vh;
   box-sizing: border-box;
-  font-family: 'roboto', sans-serif, "Segoe UI",
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  width: 90%;
+  font-family: 'Roboto', sans-serif, "Segoe UI",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   color: rgb(87, 87, 87);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: rgb(238, 238, 238);
 }
 
 body {
@@ -24,7 +26,7 @@ body {
 }
 
 header{
-  width: 900px;
+  width: 600px;
   max-width: 400px;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
   position: absolute;
@@ -38,7 +40,6 @@ header nav{
   justify-content: space-between;
   align-items: center;
   width: 200%;
-  
 }
 
 header nav a{
@@ -61,7 +62,6 @@ header nav a::before{
   left: 0;
   bottom: 0;
   width: 1px;
-  background: radial-gradient(ellipse at top, rgba(197, 202, 213, 0.7) 0%, rgb(18, 33, 59) 70%);
 }
 
 header nav a .link{
@@ -91,9 +91,8 @@ header nav a:hover,
 
 #content{
   width: 97%;
-  height: 600px;
+  height: 97%;
   margin: 0 auto;
-  box-shadow: 0px 0px 40px black;
   background: rgb(230, 230, 230);
   padding-top: 120px;
   margin-left: 15px;
@@ -114,6 +113,27 @@ h4{
 .icon{
   width: 50px;
   height: 50px;
+}
+
+div .mat-slide-toggle-bar-no-side-margin{
+  height: 30px;
+  width: 50px;
+  border-radius: 15px;
+  background: rgb(18, 33, 59);
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar{
+  background: orange;
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb{
+  background-color: white
+}
+
+div .mat-slide-toggle-thumb{
+  height: 30px;
+  width: 30px;
+  margin-top: 2.5px;
 }
 
 #search{
@@ -168,9 +188,7 @@ h4{
   align-items: center;
 }
 
-.value{
-  font-size: 50px;
-}
+
 
 .form input, textarea{
   border-radius: 15px;
@@ -230,6 +248,11 @@ snack-bar-container.success{
   color: white;
 }
 
+snack-bar-container.warn{
+  background-color: #f99157;
+  color: white;
+}
+
 snack-bar-container.notification simple-snack-bar{
   font-size: 18px !important;
   font-weight: bold;
@@ -244,6 +267,8 @@ div.mat-elevation-z8{
 
 .datatable{
   background: rgb(230, 230, 230);
+  width: 80%;
+  margin-left: 30px;
 }
 .dataTableHeader{
   visibility: hidden;
@@ -251,12 +276,41 @@ div.mat-elevation-z8{
 }
 
 .dataTableCell{
+  width:100%;
   margin-bottom: 20px;
   border-radius: 20px;
   background: white;  
   color: grey;
   padding: 2%;
 }
+
+.cellDate{
+  width: 100%;
+  text-align: center;
+  color: rgb(87, 87, 87);
+  margin-right: 10px;
+}
+
+.fa-chevron-down{
+  color: orange;
+  font-size: 30px;
+}
+
+.cellOrigin{
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: rgb(87, 87, 87);
+}
+
+.valueText{
+  font-size: 2rem;
+  color: rgb(87, 87, 87);
+}
+
 
 .fa-truck{
   font-size: 40px;
@@ -269,9 +323,21 @@ div.mat-elevation-z8{
   color: grey;
 }
 
+.mat-raised-button{
+  height: 60px;
+  width: 20px;
+  font-size: 10px;
+  margin-left: 90%;
+}
+
+button.deleteboton{
+  margin-left: 40%;
+}
+
 button.btnErase {
   border: none;
   background: white;
+  margin-left: 60%;
 }
 
 .hide{
@@ -284,19 +350,24 @@ mat-footer-row mat-footer-cell{
 
 .search-div{
   margin:10px;
+  display: flex;
+  justify-content: flex-end;
+  width: 90%;
 }
 
 .search-form-field{
-  width: 60%;
-  margin-left: 10px;
+  width: 300px;
+  margin-right: 100px;
   padding: 5px 10px;
   background-color: white;
   border-radius: 5px;
   border: 1px solid grey;
+  
 }
 
 .search-form-field div.mat-form-field-underline{
   display: none;
+  
 }
 
 .search-form-field div.mat-form-field-infix{
@@ -311,8 +382,7 @@ mat-footer-row mat-footer-cell{
   height: 32px;
   width: 32px;  
 }
-
-.addNew{
+ .addNew{
   border-radius: 100px;
   height: 70px;
   width: 70px;
@@ -322,7 +392,8 @@ mat-footer-row mat-footer-cell{
   color: white;
   cursor: pointer;
   border: none;
-  transform: translate(750px);
+  margin-top: -15%;
+  margin-left: 75%;
 }
 .addNew .material-icons{
   font-size: 4rem;
@@ -340,8 +411,4 @@ button.btn-dialog-close{
   height: 40px;
   padding: 0px !important;
   font-size: 10px;
-}
-
-.fa-sort-down{
-  color: orange;
 }

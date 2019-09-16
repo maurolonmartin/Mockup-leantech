@@ -1,6 +1,6 @@
 <div class="search-div">
     <mat-form-field class="search-form-field" floatLabel="never">
-        <input matInput [(ngModel)]="searchKey" class="material-icons" placeholder="Search" autocomplete="off" (keyup)=applyFilter()>
+        <input matInput [(ngModel)]="searchKey" class="input-search" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
         <button mat-button matSuffix mat-icon-button arial-label="clear" *ngIf="searchKey" (click)="onSearchClear()">
             <mat-icon>close</mat-icon>
         </button>
@@ -8,12 +8,12 @@
 </div>
 <div class="mat-elevation-z8">
     <mat-table [dataSource]="listData" class="datatable">
-        <ng-container matColumnDef="$key">
-            <mat-cell>Monday<br>10 2:28<br>PM</mat-cell>
+        <ng-container matColumnDef="date">
+            <mat-cell class="cellDate" *matCellDef="let element">{{element.date}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="origin">
-            <mat-cell *matCellDef="let element">{{element.origin}},{{element.zipOrigin}} <br><i class="fas fa-sort-down"></i>
-                <br> {{element.destination}},{{element.zipDestination}}</mat-cell>
+            <mat-cell class="cellOrigin" *matCellDef="let element">{{element.origin}}, {{element.zipOrigin}}<i class="fas fa-chevron-down"></i>
+             {{element.destination}}, {{element.zipDestination}}</mat-cell>
         </ng-container>
         <ng-container matColumnDef="iconTruck">
             <mat-cell *matCellDef="let row">
@@ -21,11 +21,16 @@
             </mat-cell>
             </ng-container>
         <ng-container matColumnDef="value">
-            <mat-cell *matCellDef="let element">${{element.value}}</mat-cell>
+            <mat-cell *matCellDef="let element" class="valueText">${{element.value}}.00</mat-cell>
         </ng-container>
-        <ng-container matColumnDef="actions">
+        <ng-container matColumnDef="deletebtn">
+            <mat-cell *matCellDef= "let element" >
+                <button mat-raised-button matTooltip="Erase button" color="accent" class="deleteboton">1</button>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="actions" class="rowActions">
             <mat-cell *matCellDef="let row">
-                <button mat-icon-button class="btnErase"><i class="fas fa-ellipsis-v" (click)="deleteShipping()"></i></button>
+                <button mat-icon-button matTooltip="Erase button" class="btnErase" (click)="onDelete(row.$key)"><i class="fas fa-ellipsis-v"></i></button>
             </mat-cell>
         </ng-container>
         <ng-container matColumnDef="loading">
@@ -43,6 +48,6 @@
         <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(listData!=null && listData.data.length==0)}"></mat-footer-row>
     </mat-table>
     <button mat-fab-button class="addNew" (click)="onCreate()">
-        <mat-icon>add</mat-icon>
+            <mat-icon>add</mat-icon>
     </button>
 </div>

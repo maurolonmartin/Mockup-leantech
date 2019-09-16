@@ -23,8 +23,6 @@
                 <mat-form-field>
                         <input formControlName="zipDestination" matInput placeholder="Zip Code City Destination">
                 </mat-form-field>
-                
-                
             </div>
         </mat-grid-tile>
         <mat-grid-tile>
@@ -38,7 +36,7 @@
                     <mat-select formControlName="status" placeholder="Status*">
                         <mat-option>None</mat-option>
                         <ng-container *ngFor="let status of statusesService.array">
-                            <mat-option value="{{status.$key}}">{{status.code}}-{{status.name}}</mat-option>
+                            <mat-option value="{{status.$key}}">{{status.name}}</mat-option>
                         </ng-container>
                     </mat-select>
                 </mat-form-field>

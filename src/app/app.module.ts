@@ -8,6 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { DatePipe } from '@angular/common';
+import { MatTooltipModule, MatButtonModule } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,7 +17,7 @@ import { HomeComponent } from './components/home/home.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { AccountComponent } from './components/account/account.component';
-import { CreateComponent } from './components/create/create.component';
+
 import { ShippingsComponent } from './components/shippings/shippings.component';
 import { ShippingComponent } from './components/shippings/shipping/shipping.component';
 import { ShippingService } from './shared/shipping.service';
@@ -32,7 +34,6 @@ import { ShippingListComponent } from './components/shippings/shipping-list/ship
     MessagesComponent,
     SettingsComponent,
     AccountComponent,
-    CreateComponent,
     ShippingsComponent,
     ShippingComponent,
     ShippingListComponent,
@@ -49,12 +50,15 @@ import { ShippingListComponent } from './components/shippings/shipping-list/ship
     ReactiveFormsModule,
     MatSelectModule,
     AngularFireDatabaseModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    MatTooltipModule,
+    MatButtonModule
   ],
   providers: [
     appRoutingProviders,
     ShippingService,
-    StatusesService
+    StatusesService,
+    DatePipe
   ],
   bootstrap: [AppComponent],
   entryComponents: [ShippingComponent]

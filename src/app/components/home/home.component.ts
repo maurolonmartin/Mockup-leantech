@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Guides } from '../models/guides';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
@@ -9,7 +8,6 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  public guides: Array<Guides>;
   private _router: Router;
 
   constructor() {
@@ -17,7 +15,6 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.guides);
   }
 
   redirigir() {
