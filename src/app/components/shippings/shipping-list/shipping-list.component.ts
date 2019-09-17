@@ -29,11 +29,7 @@ export class ShippingListComponent implements OnInit {
           };
         });
         this.listData = new MatTableDataSource(array);
-        this.listData.filterPredicate = (data, filter) => {
-          return this.displayedColumns.some(ele =>{
-            return ele != 'actions' && data[ele].toLowerCase().indexOf(filter) !=1;
-          });
-        }
+        
       });
   }
 
@@ -43,12 +39,20 @@ export class ShippingListComponent implements OnInit {
   }
 
   applyFilter(){
-    console.log("evento lanzado");
     this.listData.filter = this.searchKey.trim().toLowerCase();
   }
 
   onCreate(){
     this.service.initializeFormGroup();
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "60%";
+    this.dialog.open(ShippingComponent, dialogConfig);
+  }
+
+  onEdit(row){
+    this.service.populateForm(row);
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;

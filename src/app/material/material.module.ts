@@ -20,7 +20,7 @@ import * as Material from "@angular/material";
     Material.MatDialogModule,
     Material.MatDividerModule,
     Material.MatTooltipModule,
-    Material.MatButtonModule
+    Material.MatButtonModule,
   ],
   exports : [
     Material.MatToolbarModule,

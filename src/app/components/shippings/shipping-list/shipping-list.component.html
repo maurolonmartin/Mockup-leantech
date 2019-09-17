@@ -1,7 +1,7 @@
 <div class="search-div">
     <mat-form-field class="search-form-field" floatLabel="never">
-        <input matInput [(ngModel)]="searchKey" class="input-search" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
-        <button mat-button matSuffix mat-icon-button arial-label="clear" *ngIf="searchKey" (click)="onSearchClear()">
+        <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
+        <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
             <mat-icon>close</mat-icon>
         </button>
     </mat-form-field>
@@ -23,14 +23,14 @@
         <ng-container matColumnDef="value">
             <mat-cell *matCellDef="let element" class="valueText">${{element.value}}.00</mat-cell>
         </ng-container>
-        <ng-container matColumnDef="deletebtn">
-            <mat-cell *matCellDef= "let element" >
-                <button mat-raised-button matTooltip="Erase button" color="accent" class="deleteboton">1</button>
+        <ng-container matColumnDef="deletebtn" class="rowActions">
+            <mat-cell *matCellDef= "let row" >
+                <button mat-raised-button matTooltip="Erase button" color="accent" class="deleteboton" (click)="onDelete(row.$key)">1</button>
             </mat-cell>
         </ng-container>
         <ng-container matColumnDef="actions" class="rowActions">
             <mat-cell *matCellDef="let row">
-                <button mat-icon-button matTooltip="Erase button" class="btnErase" (click)="onDelete(row.$key)"><i class="fas fa-ellipsis-v"></i></button>
+                <button mat-icon-button matTooltip="Edit button" class="btnErase" (click)="onEdit(row)"><i class="fas fa-ellipsis-v"></i></button>
             </mat-cell>
         </ng-container>
         <ng-container matColumnDef="loading">

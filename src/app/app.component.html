@@ -45,7 +45,11 @@
     <div class="status">
       <hr>
       <h4>Status</h4>
-      <input type="search" name="" id="search" placeholder="Search" autocomplete="off" (keyup)=applyFilter()><br>
+      
+      <input matInput [(ngModel)]="searchKey" type="search" name="" id="search" placeholder="Search" autocomplete="off" (keyup)=applyFilter()>
+      
+    <br>
+  
       <input type="button" value="DELIVERED" id="delivered">
     </div>
   </div>

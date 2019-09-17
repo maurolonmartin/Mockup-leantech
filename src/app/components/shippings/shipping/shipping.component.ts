@@ -25,9 +25,14 @@ export class ShippingComponent implements OnInit {
     this.service.initializeFormGroup();
   }
 
-  onSubmit(){
-    if(this.service.form.valid){
-      this.service.insertShipping(this.service.form.value);
+  onSubmit() {
+    if (this.service.form.valid) {
+      if (!this.service.form.get('$key').value) {
+        this.service.insertShipping(this.service.form.value);
+      }
+      else {
+        this.service.updateShipping(this.service.form.value);
+      }
       this.service.form.reset();
       this.service.initializeFormGroup();
       this.notificationService.success(':: Submitted succesfully');
