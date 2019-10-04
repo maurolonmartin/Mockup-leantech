@@ -1,61 +1,60 @@
 <div class="main">
-<div>
-  <img class="logo" src="../assets/images/logo.png" alt="">
-</div>
-<div>
-  <header>
-    <nav>
+  <div>
+    <img class="logo" src="../assets/images/logo.png" alt="">
+  </div>
+  <div>
+    <header>
+      <nav>
         <a [routerLink]="['/home']" [routerLinkActive]="['actived']">
-            <span class="fas fa-home" id="icono"></span><br>
-            <span class="link">Home</span>
+          <span class="fas fa-home" id="icono"></span><br>
+          <span class="link">Home</span>
         </a>
         <a [routerLink]="['/messages']" [routerLinkActive]="['actived']">
-            <span class="fas fa-envelope" id="icono"></span><br>
-            <span class="link">Messages</span>
+          <span class="fas fa-envelope" id="icono"></span><br>
+          <span class="link">Messages</span>
         </a>
         <a [routerLink]="['/wishlist']" [routerLinkActive]="['actived']">
-            <span class="fas fa-star" id="icono"></span><br>
-            <span class="link">Wishlist</span>
+          <span class="fas fa-star" id="icono"></span><br>
+          <span class="link">Wishlist</span>
         </a>
         <a [routerLink]="['/settings']" [routerLinkActive]="['actived']">
-            <span class="fas fa-cog"></span><br>
-            <span class="link">Settings</span>
+          <span class="fas fa-cog"></span><br>
+          <span class="link">Settings</span>
         </a>
         <a [routerLink]="['/account']" [routerLinkActive]="['actived']">
           <span class="fas fa-user"></span><br>
           <span class="link">Account</span>
-      </a>
-    </nav>
-  </header>
-</div>
-<div id="content">
-  <div>
-    <div class="filter">
-      <h4><i class="far fa-lightbulb"></i> Smart Filters</h4><hr>
-      <div class="controles">
-        <img src="../assets/images/sale.png" class="icon"><mat-slide-toggle class="toggleBtn"></mat-slide-toggle>
-      </div><br>
-      <div class="controles">
-        <img src="../assets/images/calendar.png" class="icon"><mat-slide-toggle class="toggleBtn"></mat-slide-toggle>
-      </div><br>
-      <div class="controles">
-        <img src="../assets/images/heart.png" class="icon"><mat-slide-toggle class="toggleBtn"></mat-slide-toggle>
-      </div><br>
-    </div>
-    <div class="status">
-      <hr>
-      <h4>Status</h4>
-      
-      <input matInput [(ngModel)]="searchKey" type="search" name="" id="search" placeholder="Search" autocomplete="off" (keyup)=applyFilter()>
-      
-    <br>
-  
-      <input type="button" value="DELIVERED" id="delivered">
-    </div>
+        </a>
+      </nav>  
+    </header>
   </div>
-  <div class="appRouter">
-    <router-outlet></router-outlet>
+  <div class="content">
+    <div>
+      <div class="filter">
+        <h4><i class="far fa-lightbulb"></i> Smart Filters</h4>
+        <hr>
+        <div class="controles">
+          <img src="../assets/images/sale.png" class="icon">
+          <mat-slide-toggle class="toggleBtn"></mat-slide-toggle>
+        </div>
+        <div class="controles">
+          <img src="../assets/images/calendar.png" class="icon">
+          <mat-slide-toggle class="toggleBtn"></mat-slide-toggle>
+        </div>
+        <div class="controles">
+          <img src="../assets/images/heart.png" class="icon">
+          <mat-slide-toggle class="toggleBtn"></mat-slide-toggle>
+        </div>
+      </div>
+      <div class="status">
+        <hr>
+        <h4>Status</h4>
+        <input id="buscar" [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
+        <button id="delivered">DELIVERED</button>
+      </div>
+    </div>
+    <div class="appRouter">
+      <router-outlet></router-outlet>
   </div>
-</div>
-
+  </div>
 </div>

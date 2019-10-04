@@ -1,1 +1,47 @@
-<p>settings works!</p>
+<div class="container p-5">
+    <h2>Notifications</h2>
+    <div class="row py-3 align-items-center text-muted">
+        <div class="col-md-4">
+            <h5>Enable Notifications:</h5>
+        </div>
+        <div class="col-md-6">
+            <div class="custom-control custom-switch">
+                <input type="checkbox" [(ngModel)]="checkValue" class="custom-control-input" id="notifications">
+                <label class="custom-control-label" for="notifications"> 
+                {{ checkValue ? 'Si' : 'No'  }} 
+            </label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <h5>Notification Time:</h5>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="range" class="custom-range" [(ngModel)]="rangeValue" min="0" max="100" step="5" id="customRange2">
+                </div>
+                <div class="col-md-6">
+                    {{ rangeValue }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="style1">
+    <h2>Messages</h2>
+    <div class="row align-items-center text-muted">
+        <div class="col-md-4">
+            <h5>Message Limit</h5>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <select class="form-control" id="exampleFormControlSelect1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+            </div>
+        </div>
+    </div>
+</div>

@@ -10,6 +10,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { DatePipe } from '@angular/common';
 import { MatTooltipModule, MatButtonModule } from '@angular/material';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ import { ShippingService } from './shared/shipping.service';
 import { environment } from '../environments/environment';
 import { StatusesService } from './shared/statuses.service';
 import { ShippingListComponent } from './components/shippings/shipping-list/shipping-list.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
 
 
 
@@ -37,6 +39,7 @@ import { ShippingListComponent } from './components/shippings/shipping-list/ship
     ShippingsComponent,
     ShippingComponent,
     ShippingListComponent,
+    WishlistComponent,
   
   ],
   imports: [
@@ -52,13 +55,15 @@ import { ShippingListComponent } from './components/shippings/shipping-list/ship
     AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     MatTooltipModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSidenavModule
   ],
   providers: [
     appRoutingProviders,
     ShippingService,
     StatusesService,
-    DatePipe
+    DatePipe,
+    ShippingListComponent
   ],
   bootstrap: [AppComponent],
   entryComponents: [ShippingComponent]

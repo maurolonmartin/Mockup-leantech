@@ -21,6 +21,7 @@ import * as Material from "@angular/material";
     Material.MatDividerModule,
     Material.MatTooltipModule,
     Material.MatButtonModule,
+    Material.MatSidenavModule
   ],
   exports : [
     Material.MatToolbarModule,
@@ -37,7 +38,8 @@ import * as Material from "@angular/material";
     Material.MatDialogModule,
     Material.MatDividerModule,
     Material.MatTooltipModule,
-    Material.MatButtonModule
+    Material.MatButtonModule,
+    Material.MatSidenavModule
   ]
 })
 export class MaterialModule { }

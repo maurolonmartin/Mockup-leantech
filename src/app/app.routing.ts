@@ -8,6 +8,8 @@ import { AccountComponent } from './components/account/account.component';
 import { ShippingsComponent } from './components/shippings/shippings.component';
 import { ShippingListComponent } from './components/shippings/shipping-list/shipping-list.component';
 import { ShippingComponent } from './components/shippings/shipping/shipping.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
+
 
 
 const appRoutes: Routes = [
@@ -18,6 +20,7 @@ const appRoutes: Routes = [
     {path: 'shippings', component: ShippingsComponent},
     {path: 'shipping-list', component: ShippingListComponent},
     {path: 'shipping', component: ShippingComponent},
+    {path: 'wishlist', component: WishlistComponent},
     {path: '**', component: HomeComponent}
 ];
 

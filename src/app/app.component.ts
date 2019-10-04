@@ -1,44 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
 import { ShippingListComponent } from '../app/components/shippings/shipping-list/shipping-list.component';
-import { ShippingService } from 'src/app/shared/shipping.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent{
+export class AppComponent implements OnInit{
   title = 'mockup-leantech';
+  searchKey: string;
 
-  constructor(private service: ShippingService) { }
+  constructor(private service: ShippingListComponent) { }
 
   listData: MatTableDataSource<any>;
   displayedColumns: string[] = ['date', 'origin', 'iconTruck', 'value', 'deletebtn','actions'];
-  searchKey: string;
+  
 
   ngOnInit() {
-    this.service.getShippings().subscribe(
-      list => {
-        let array = list.map(item => {
-          return{
-            $key: item.key,
-            ...item.payload.val()
-          };
-        });
-        this.listData = new MatTableDataSource(array);
-        
-      });
-  }
-
-  onSearchClear(){
-    this.searchKey = "";
-    this.applyFilter();
+   
   }
 
   applyFilter(){
-    console.log("evento lanzado");
-    this.listData.filter = this.searchKey.trim().toLowerCase();
+    this.service.applyFilter();
+    alert("evento lanzado");
   }
 
 }
