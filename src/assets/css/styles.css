@@ -131,9 +131,9 @@ div .mat-slide-toggle-bar-no-side-margin{
 }
 
 div .mat-slide-toggle-thumb{
-  height: 30px;
-  width: 30px;
-  margin-top: 2.5px;
+  height: 35px;
+  width: 35px;
+  margin-top: 0.5px;
 }
 
 #buscar{
@@ -410,4 +410,24 @@ button.btn-dialog-close{
   height: 40px;
   padding: 0px !important;
   font-size: 10px;
+}
+
+#mesagges{
+  width: 235px;
+  height:25px;
+  
+  text-align: center;
+  border: 1 px black;
+  background: white;
+  border-radius: 5px;
+}
+
+#saveBtn{
+  width: 135px;
+  height:30px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  text-align: center;
+  border: none;
+  background: white;  
 }

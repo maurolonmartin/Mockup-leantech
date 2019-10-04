@@ -22,6 +22,6 @@
         <label for="message" class="label-name">Message</label><br/>
         <textarea name="message" #messagetex="ngModel" [(ngModel)]="message.messagetext" required></textarea><br/>
 
-        <input type="submit" value="Send">
+        <input type="submit" value="Send" (onClick)="onSubmit()">
     </form>
 </div>
